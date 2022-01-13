@@ -1,0 +1,195 @@
+<?php 
+include("config.php");
+$pageCat = "top";
+$pageTitle = "";
+$pageKey = "";
+$pageDisc = "";
+include($siteRoot."/assets/inc/head.php");
+include($siteRoot."/assets/inc/header.php");
+ ?>
+<main>
+	<div class="main_vis">
+
+		<div class="box active">
+			<div class="main_text">
+				<img src="/assets/img/top/main/01_sp.webp" alt="" class="sp">
+				<img src="/assets/img/top/main/01_pc.webp" alt="" class="pc">
+				
+			</div>
+			<div class="bg"></div>
+		</div>
+		<div class="box">
+			<div class="main_text">
+				<img src="/assets/img/top/main/02_sp.webp" alt="" class="sp">
+				<img src="/assets/img/top/main/02_pc.webp" alt="" class="pc">
+			</div>
+			<div class="bg"></div>
+		</div>
+		<a href="#main_cont" class="scroll"></a>
+	</div>
+	<div class="main_cont">
+		<i id="main_cont" class="point"></i>
+		<article class="info_area">
+			<div class="banner_area">
+				<a href="/recruit/">
+					<img src="/assets/img/top/bnr_recruit_sp.webp" alt="" class="sp">
+					<img src="/assets/img/top/bnr_recruit_pc.webp" alt="" class="pc">
+				</a>
+			</div>
+			<div class="inner">
+				<h2>
+					INFORMATION
+					<small>お知らせ</small>
+				</h2>
+				<div class="info_box">
+					<ul class="info__list">
+						<?php if($_SERVER['HTTP_HOST'] == "kyoseikai.com"):?>
+						<?php 
+                    	require_once( $_SERVER['DOCUMENT_ROOT']. '/info/wp-load.php' );
+						$infolist = get_posts( array(
+						  'category' => '1', // 取得したいカテゴリーの ID を入れる
+						  'posts_per_page' => 5
+						));
+						foreach( $infolist as $post ):
+						setup_postdata( $post );
+
+						$cat = get_the_category(); // カテゴリーを配列で取得し
+						$cat = $cat[0]; // カテゴリー名（カテゴリースラッグ）を指定し
+						$cat_slug = $cat -> slug; // $cat_slug に入れる
+					  ?>
+                        <li>
+                            <span><?php the_time('Y年m月d日'); ?></span>
+                            <em data-cont="<?php the_field('info_type'); ?>">
+								<?php if(get_post_meta($post->ID,'info_type',true) == '十三本院のお知らせ'): ?>
+								十三本院
+								<?php elseif(get_post_meta($post->ID,'info_type',true) == '武庫之荘院のお知らせ'): ?>
+								武庫之荘院
+								<?php else: ?>
+								<?php the_field('info_type'); ?>
+								<?php endif; ?>
+								
+							</em>
+                            <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+                        </li>
+					  <?php
+						endforeach;
+						wp_reset_postdata();
+					  ?>
+					  <?php else: ?>
+                        <li>
+                          <span>2021年00月00日</span>
+                          <em data-cont="お知らせ">お知らせ</em>
+                          <p><a href="#">お知らせの記事のリンク</a></p>
+                      </li>
+                      <li>
+                          <span>2021年00月00日</span>
+                          <em data-cont="お知らせ">お知らせ</em>
+                          <p><a href="#">お知らせの記事のリンク</a></p>
+                      </li>
+                      <li>
+                          <span>2021年00月00日</span>
+                          <em data-cont="お知らせ">お知らせ</em>
+                          <p><a href="#">お知らせの記事のリンク</a></p>
+                      </li>
+                      <li>
+                          <span>2021年00月00日</span>
+                          <em data-cont="お知らせ">お知らせ</em>
+                          <p><a href="#">お知らせの記事のリンク</a></p>
+                      </li>
+                      <li>
+                          <span>2021年00月00日</span>
+                          <em data-cont="お知らせ">お知らせ</em>
+                          <p><a href="#">お知らせの記事のリンク</a></p>
+                      </li>						
+                        <?php endif; ?>
+					</ul>
+				</div>
+				<div class="info_btn">
+					<a href="/info/">一覧へ</a>
+				</div>
+			</div>
+		</article>
+		<article class="aboutus_area">
+			<div class="inner">
+				<h2>
+					KYOSEIKAI<br class="pc"> Group<br>Network
+					<small>恭青会ネットワーク</small>
+				</h2>
+				<div class="aboutus_copy">
+					<strong>全国から患者様がご来院いただいています</strong>
+					<em>大阪府／京都府／兵庫県／奈良県／滋賀県／和歌山県／三重県／愛知県<small>など</small></em>
+					<p>「いくの眼科十三本院」は2015年に十三で開院し、今では年間で1,000件以上の手術と1万人以上の診察を行っています。他院からの紹介患者様も年間500人以上となりました。2017年には武庫之荘に「あさいアイクリニック」を開院し、管理部と併せて医療法人恭青会を設立いたしました。そして2021年にはあさいアイクリニックを引継ぎ、「いくの眼科 武庫之荘院」としてリニューアルオープンしました。	これからも恭青会グループは皆さまの目の健康に役立てるよう精進して参ります。</p>
+				</div>
+				<div class="aboutus_map">
+					<img src="assets/img/top/map_sp.webp" alt="" class="sp">
+					<img src="assets/img/top/map_pc.webp" alt="" class="pc">
+				</div>
+							
+
+			</div>
+			
+		</article>
+		<article class="shop_area">
+			<h2>OUR CLINICS<small>クリニックのご案内</small></h2>
+			<div class="sec_wrap">
+				<section class="shop_juso">
+					<div class="img">
+						<img src="/assets/img/top/shop_juso_img.webp" alt="">
+					</div>
+					<div class="txt">
+						<strong>
+							<img src="ikuno-eye/assets/img/cmn/logo_ikuno.svg" alt="">
+						</strong>
+						<div class="examination">
+							<?php include($siteRoot."/assets/inc/examination_ikuno-eye.php"); ?>
+							<small>★…手術も行います</small>
+						</div>
+						<div class="address">
+							〒532-0023<br>
+							大阪市淀川区十三東2丁目9-10<br>
+							十三駅前医療ビル3階
+						</div>
+						<div class="tel">
+							<svg id="レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.39 48"><path d="M28.7,1.23H6.7A2.88,2.88,0,0,0,3.82,4.11h0V43.9a2.87,2.87,0,0,0,2.87,2.87h22a2.86,2.86,0,0,0,2.87-2.87h0V4.11a2.86,2.86,0,0,0-2.86-2.88ZM14.78,6.39l-2.86,4.52a.71.71,0,0,0,1.13.85l4.76-5.37h3.68L14.05,17a.77.77,0,0,0,.14,1,.73.73,0,0,0,1-.12l9.3-11.49H27.7a.46.46,0,0,1,.48.46h0V35.12a.48.48,0,0,1-.48.46H7.7a.47.47,0,0,1-.48-.46h0V6.85a.47.47,0,0,1,.46-.46h7.1Zm5.55,34.13a2.63,2.63,0,1,1-2.64-2.62h0a2.61,2.61,0,0,1,2.63,2.61Z"/></svg>							<a href="tel:0663094930">06-6309-4930</a>
+						</div>
+						<div class="btn">
+							<a href="/ikuno-eye/">
+								ホームページ
+							</a>
+						</div>
+					</div>
+				</section>
+				<section class="shop_mukonosou">
+					<div class="img">
+						<img src="/assets/img/top/shop_mukonosou_img.webp" alt="">
+					</div>
+					<div class="txt">
+						<strong>
+							<img src="/assets/img/cmn/logo_mukonosou_ikuno.svg" alt="">
+						</strong>
+						<div class="examination">
+							<?php include($siteRoot."/assets/inc/examination_mukonosou.php"); ?>
+							<small>★…手術も行います</small>
+						</div>
+						<div class="address">
+							〒661-0033<br>
+							兵庫県尼崎市南武庫之荘1-8-16<br>
+							ピネータテラス武庫之荘 1階
+						</div>
+						<div class="tel">
+							<svg id="レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.39 48"><path d="M28.7,1.23H6.7A2.88,2.88,0,0,0,3.82,4.11h0V43.9a2.87,2.87,0,0,0,2.87,2.87h22a2.86,2.86,0,0,0,2.87-2.87h0V4.11a2.86,2.86,0,0,0-2.86-2.88ZM14.78,6.39l-2.86,4.52a.71.71,0,0,0,1.13.85l4.76-5.37h3.68L14.05,17a.77.77,0,0,0,.14,1,.73.73,0,0,0,1-.12l9.3-11.49H27.7a.46.46,0,0,1,.48.46h0V35.12a.48.48,0,0,1-.48.46H7.7a.47.47,0,0,1-.48-.46h0V6.85a.47.47,0,0,1,.46-.46h7.1Zm5.55,34.13a2.63,2.63,0,1,1-2.64-2.62h0a2.61,2.61,0,0,1,2.63,2.61Z"/></svg>
+							<a href="tel:0664238871">06-6423-8871</a>
+						</div>
+						<div class="btn">
+							<a href="/mukonosou/">
+								ホームページ
+							</a>
+						</div>
+					</div>
+				</section>
+			</div>
+		</article>
+	</div>
+</main>
+<?php include($siteRoot."/assets/inc/footer.php"); ?>  
+

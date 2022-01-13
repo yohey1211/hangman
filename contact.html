@@ -1,0 +1,136 @@
+<?php 
+include("config.php");
+$pageCat = "form";
+$pageTitle = "お問い合わせ";
+$pageKey = "";
+$pageDisc = "";
+include($siteRoot."/assets/inc/head.php");
+include($siteRoot."/assets/inc/header.php");
+include($siteRoot."/assets/inc/page_title.php");
+ ?>
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='/thanks.html';}"></iframe>
+
+<main class="">
+	<div class="mainForm mainCont banner">
+		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdficOdlhGoNXI-cYjpeu1a9sNBJGr6jh8VkTXa3pxgfOT85w/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+            <article>
+			    <h2>ご入力欄</h2>
+               	
+                <dl class="name must">
+                    <dt>お名前</dt>
+                    <dd>
+                        <input type="text" name="entry.1806754418" placeholder="姓" required>
+                        <input type="text" name="entry.1370872178" placeholder="名" required>
+                    </dd>
+                </dl>
+                <dl class="kana must">
+                    <dt>お名前（カナ）</dt>
+                    <dd>
+                        <input type="text" name="entry.1299946091" placeholder="セイ" required>
+                        <input type="text" name="entry.1964648040" placeholder="メイ" required>
+                    </dd>
+                </dl>
+                <dl class="tel">
+                    <dt>所属・勤務先名</dt>
+                    <dd>
+                        <input type="tel" name="entry.495061178" placeholder="">
+                    </dd>
+                </dl>
+                <dl class="tel">
+                    <dt>連絡先の電話番号</dt>
+                    <dd>
+                        <input type="tel" name="entry.1034973102" placeholder="例：0611112222">
+                        <small>「-（ハイフン）」なしで入力してください。</small>
+                    </dd>
+                </dl>
+                <dl class="mail must">
+                    <dt>メールアドレス</dt>
+                    <dd>
+                        <input type="email" name="entry.1045503448" placeholder="例：jmrc@eye-research.jp" required>
+                    </dd>
+                </dl>
+                <dl class="must">
+                    <dt>問合せ項目</dt>
+                    <dd>
+                    	<ul>
+                    		<li>
+                    			<input type="radio" id="leaflet" name="entry.1890686515" value="クリニックパンフレットの郵送お申込み">
+                  				<label for="leaflet">クリニックパンフレットの郵送お申込み</label>
+                    		</li>
+                    		<li>
+                    			<input type="radio" id="cooperation" name="entry.1890686515" value="診療連携についてのお問い合わせ">
+								<label for="cooperation">診療連携についてのお問い合わせ</label>
+                    		</li>
+                    		<li>
+                    			<input type="radio" id="coverage" name="entry.1890686515" value="取材のお申込み">
+								<label for="coverage">取材のお申込み</label>
+                    		</li>
+                    		<li>
+                    			<input type="radio" id="other" name="entry.1890686515" value="その他">
+								<label for="other">その他</label>
+                    		</li>
+                    	</ul>
+                    </dd>
+                </dl>
+                
+				<dl class="must">
+                    <dt>内容</dt>
+                    <dd>
+						 <textarea name="entry.2141823485"></textarea>
+                   　	<small>パンフレットの送付をご希望の方はこちら送付先のご住所をご記入ください。</small>
+                    </dd>
+                </dl>
+                <dl class="must">
+                    <dt>個人情報の利用目的</dt>
+                    <dd>
+						<div class="privacy">
+							<div class="privacy_txt">
+								<p>
+									この度は当グループにご関心をお寄せいただきありがとうございます。
+									以下に記載する当グループ個人情報の取り扱いについてお読みいただき、ご理解、ご同意いただだいた上でご利用をお願いいたします。
+								</p>
+									
+								<p>
+									<strong>＜基本的な考え方＞</strong>
+									当グループでは、ホームページにおいて提供するサービス（当ホームページによる情報提供、各種お問い合せ等）の円滑な運営に必要な範囲で、当ホームページを利用される皆様の情報を収集しています。収集した情報は利用目的の範囲内で適切に取扱います。 
+								</p>
+								<p>
+									<strong>＜個人情報の収集について＞</strong>
+									この個人情報保護方針に述べられている「個人情報」とは、氏名、住所、電話番号、FAX番号、メールアドレス、 当ホームページのアクセス記録等の特定の個人を識別することができる情報をいいます。当ホームページでは、お問い合せいただく際、皆さまの個人情報を収集することがあります。当グループによる個人情報の収集はあくまで皆さまの自発的な提供によるものであり、皆さまが個人情報を提供された場合は、当グループがこの個人情報保護方針に則って個人情報を利用することを、皆さまが許諾したものとします。ただし当グループは、開示されている事と異なった方法で、本人に許可なく個人情報を第三者に開示することはございません。
+								</p>
+								<p>
+									<strong>＜個人情報の利用について＞</strong>
+									個人情報を収集する場合には、収集の目的を明確にします。問合せに対する回答、サービスの詳細な資料請求等、皆さまの要望に応じたサービスを提供する目的で利用を行います。また、当グループから皆さまへのご連絡としてEメールや、電話等で情報をご提供する場合があります。
+								</p>
+								<p>
+									<strong>＜個人情報の共有について＞</strong>
+									当グループは、皆さまの個人情報を原則として皆さまの許可なく第三者に提供することはありません。但し、メール配信等に関する資料請求として第三者に委託することがあります。また、裁判所、警察、消費者センター、あるいは、これらに準じた権限を持った機関から合法的な要請がある場合は、これに応じて情報を開示させていただきます。
+								</p>
+								<p>
+									<strong>＜リンクについて＞</strong>
+									当ホームページは、いくつかの外部サイトへのリンクを含むことがありますが個人情報を共有するものではありません。リンク先ホームページにて行われる個人情報の収集に関しては当グループでは一切責任を負えませんので、リンク先ホームページのプライバシーポリシーを必ずご参照ください。
+								</p>
+								<p>
+									<strong>＜個人情報保護に関する意見・苦情・異議申し立てについて＞</strong>
+									皆様が、当ホームページで掲示した個人情報保護方針を守っていないと思われる場合には、当グループへご連絡ください。
+								</p>
+							</div>
+						</div>
+						<input type="checkbox" name="entry.2053622847" id="privacy" value="個人情報の利用目的に同意しました" required>
+						<label for="privacy">
+							上記の内容に同意する
+						</label>
+                    </dd>
+                </dl>
+			</article>
+			<div class="submit">
+				<input type="submit" value="送信">
+			</div>
+	
+			
+		</form>
+	</div>
+</main>
+<?php include($siteRoot."/assets/inc/footer.php"); ?>  
+
